@@ -1,0 +1,18 @@
+<!-- HOME PAGE MOVIES STARTS BELOW -->
+
+<div class="container">
+  <a [routerLink]="['/preview', movie.id]" class="m-container" *ngFor="let movie of movies">
+    <div >
+      <img
+        src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
+        alt=""
+      />
+      <div class="movie-details">
+        <h4>{{ movie.title }}</h4>
+        <em> {{ movie.release_date }} </em>
+      </div>
+    </div>
+  </a>
+</div>
+<app-favorites></app-favorites>
+<!-- HOME PAGE MOVIES ENDS ABOVE -->

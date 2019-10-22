@@ -1,0 +1,19 @@
+<div class="container">
+  <a *ngFor="let movie of searchedMovies"
+  [routerLink]="['/preview', movie.id]"
+  class="m-container">
+    <div>
+      <img
+        src="https://image.tmdb.org/t/p/original/{{ movie.poster_path }}"
+        alt=""
+      />
+      <div class="movie-details">
+        <h4>{{ movie.title }}</h4>
+        <em> {{ movie.release_date }}</em>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="oops" *ngIf="searchedMovies.length < 1" ><p>Oops!! it appears your searched movie is not in our movies database, We will add it soon.</p></div>
+<app-favorites></app-favorites>

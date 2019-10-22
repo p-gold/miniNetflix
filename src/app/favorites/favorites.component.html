@@ -1,0 +1,23 @@
+<!-- FAVORITE MOVIES STARTS HERE -->
+<section class="popular-movies favourites-movies">
+  <h3 class="pop-movies-heading">
+    Your <i class="fas fa-heart red"></i> Favourite Movies
+  </h3>
+
+  <div class="pop-movies-list">
+    <a
+    href="/preview/{{favorite.id}}" class="popular" *ngFor="let favorite of favorites">
+      <img
+        src="https://image.tmdb.org/t/p/original{{ favorite.poster_path }}"
+        alt=""/>
+      <div class="pop-details">
+        <p>Name: {{ favorite.title }}</p>
+        <P class="yearReleased">Released: {{ favorite.release_date }} </P>
+        <p>Ratings: {{ favorite.vote_average }}</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="oops" *ngIf="favorites.length < 1 "><p>You have no movies in your favorite movies list.</p></div>
+<!-- fAVORITE MOVIES ENDS  ABOVE-->

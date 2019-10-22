@@ -1,0 +1,28 @@
+<div class="movie-preview-container cont">
+  <div class="large-bg">
+    <img
+      src="https://image.tmdb.org/t/p/original{{ movie.poster_path }}"
+      alt=""
+      class="large-bg"
+    />
+  </div>
+  <div class="movie-bio">
+    <h1>Movie details</h1>
+    <h3>Name: {{ movie.title }}</h3>
+    <h3>Language: {{ movie.original_language }}</h3>
+    <h3>Vote: {{ movie.vote_average }}</h3>
+    <h3>Year: {{ movie.release_date }}</h3>
+    <p>{{ movie.overview }}</p>
+    <div class="addFavorites" *ngIf="!checkFav()" (click)="addFavMovie()">
+      <i class="fas fa-heart"  >Add To Favorites</i>
+
+    </div>
+    <div class="addFavorites" *ngIf="checkFav()">
+      <i class="fas fa-trash removeFavorite"  (click)="rmFavMovie()"
+        >Remove From Favorites</i
+      >
+    </div>
+  </div>
+</div>
+
+<app-favorites></app-favorites>

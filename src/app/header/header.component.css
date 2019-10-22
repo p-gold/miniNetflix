@@ -1,0 +1,8 @@
+.links:hover{
+    border-bottom: 3px solid rgb(245, 0, 0);
+    cursor: pointer;
+}
+
+.links:active{
+  border: none;
+}
